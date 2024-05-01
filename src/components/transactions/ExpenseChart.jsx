@@ -1,5 +1,6 @@
 import { VictoryPie, VictoryLabel } from "victory";
 import { useGlobalState } from "../../context/GlobalState";
+import { BsPieChartFill } from "react-icons/bs";
 
 function ExpenseChart() {
   const { transactions } = useGlobalState();
@@ -18,6 +19,17 @@ function ExpenseChart() {
   );
 
   const totalIncomePercentage = 100 - totalExpensivePercentage;
+
+  if (totalIncome === 0 && totalExpensive === 0) {
+    return (
+      <div className="bg-zinc-900 p-4 my-2">
+        <div className="h-full flex items-center justify-center w-full flex-col">
+          <BsPieChartFill className="text-9xl" />
+          <h1 className="text-3xl font-bold my-2">No data yet</h1>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <VictoryPie

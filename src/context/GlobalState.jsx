@@ -5,10 +5,12 @@ const initialState = {
   transactions: [],
 };
 
-export const Context = createContext();
+export const Context = createContext(initialState);
 
 export const useGlobalState = () => {
   const context = useContext(Context);
+  if (!context)
+    throw new Error("useGlobalState must be used within a GlobalState");
   return context;
 };
 
