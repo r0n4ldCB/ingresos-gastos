@@ -8,11 +8,11 @@ import ExpenseChart from "./components/transactions/ExpenseChart";
 function App() {
   return (
     <GlobalProvider>
-      <div className="bg-zinc-900 text-white h-screen flex justify-center items-center">
+      <div className="bg-zinc-900 text-white h-screen w-screen flex justify-center items-center">
         <div className="container mx-auto w-3/6">
-          <div className="bg-zinc-800 p-10 rounded-lg flex gap-x-2">
+          <div className="bg-slate-800 p-10 rounded-lg flex gap-x-2">
             <div>
-              <h1 className="text-4xl font-bold">Seguidor de Gastos</h1>
+              <h1 className="text-4xl font-bold">Contabilizador</h1>
               <IncomeExpenses />
               <Balance />
               <TransactionForm />

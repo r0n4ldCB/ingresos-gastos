@@ -33,13 +33,13 @@ function ExpenseChart() {
 
   return (
     <VictoryPie
-      colorScale={["#e74c3c", "#2ecc71"]}
+      colorScale={["red", "blue" ]}
       data={[
         { x: "Expense", y: totalExpensivePercentage },
         { x: "Incomes", y: totalIncomePercentage },
       ]}
       animate={{ duration: 200 }}
-      labels={({ datum }) => datum.y}
+      labels={({ datum }) => `${datum.y} %`}
       labelComponent={<VictoryLabel angle={45} style={{ fill: "white" }} />}
     />
   );
